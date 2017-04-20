@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mextli</title>
+  </head>
+  <body>
+    <h1>Mextli</h1>
+    <form id="cursos" enctype="multipart/form-data">
+      <input type="text" name="titulo" value="{{ info.titulo }}">
+      <input type="date" name="fecha" value="{{ fecha }}">
+      <textarea name="informacion">{{ info.informacion }}</textarea>
+      <input type="file" name="cursos">
+      <input type="number" name="costo" value="{{ info.costo }}">
+      <input type="hidden" value="{{ info._id }}" name="id" id="id">
+      <input type="submit" value="Actualizar">
+    </form>
+    <script src="/js/editar.js">
+    </script>
+  </body>
+</html>
