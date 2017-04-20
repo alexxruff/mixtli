@@ -7464,7 +7464,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400 !important;
   font-size: 48px !important;
   color: #484848;
-  margin-bottom: 30px; 
+  margin: 30px 0; 
 }
 .nosotros-p{
   font-weight: 200;
@@ -7491,6 +7491,7 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   height: 370px;
   background-attachment: fixed;
+  margin-top: 30px;
 }
 .parallax-info{
   display: flex;
