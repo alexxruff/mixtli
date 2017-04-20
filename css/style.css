@@ -7573,6 +7573,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 210px !important;
 }
 
+.logo-footer{
+  width: 200px;
+  margin-left: 15px; 
+}
+
 #fh5co-offcanvass {
   position: fixed;
   z-index: 90;
@@ -7762,7 +7767,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-size: 100px;
   line-height: 50px;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   padding-bottom: 20px;
 }
 #fh5co-hero .fh5co-intro p {
