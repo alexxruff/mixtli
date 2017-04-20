@@ -1,0 +1,27 @@
+{
+  "name": "mixtli",
+  "version": "0.0.1",
+  "description": "Servicios de G-Suit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benjamin de la cruz martinez <benjamin@kimvex.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "fs-extra": "^2.1.2",
+    "moment": "^2.18.1",
+    "mongoose": "^4.9.5",
+    "multer": "^1.3.0",
+    "nunjucks": "^3.0.0",
+    "uid": "0.0.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "catlistener": "0.0.9",
+    "factor-bundle": "^2.5.0"
+  }
+}
