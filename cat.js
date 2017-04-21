@@ -8,7 +8,13 @@ cat.server({
 });
 
 cat.browserify({
-  original: ['./static/js/script.js', './static/js/edit.js'],
-  compilado: ['./static/js/subida.js','./static/js/editar.js'],
+  original: ['./static/js/script.js', './static/js/edit.js', './static/js/contact.js'],
+  compilado: ['./static/js/subida.js','./static/js/editar.js', './static/js/contacto.js'],
   presets: 'es2015'
+});
+
+cat.stylus({
+  options: ['compila', 'escucha', 'observa'],
+  css: './static/css/',
+  stylus: './static/stylus/subida.styl'
 });

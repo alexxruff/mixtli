@@ -8,11 +8,13 @@ const path       = require('path');
 const fs         = require('fs-extra');
 const nunjucks   = require('nunjucks');
 const moment     = require('moment');
+const nodemailer = require('nodemailer');
 const mongoose   = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // Importando modulos creados
-const schema = require('./models/schema');
+const schema  = require('./models/schema');
+const mensaje = require('./models/templateMail');
 
 // Iniciamos el Servidor
 const app = express();
@@ -68,7 +70,7 @@ app.get('/', (sol, res)=> {
 app.get('/agregando-cursos', (sol, res)=> {
 
   res.render('nuevo');
-  
+
 });
 
 app.get('/editar/:id', (sol, res) => {
@@ -90,11 +92,42 @@ app.get('/editar/:id', (sol, res) => {
 
 app.get('/obtener', (sol, res) => {
 
-  schema.cursos.find()
+  schema.cursos.find({}, null, {limit: 10})
+    .sort({_id: -1})
     .then(data => res.json({cursos: data}))
     .catch(err => {
       throw err;
     });
+
+});
+
+// Envio de correos desde el formulario
+app.post('/formulario', (sol, res)=> {
+
+  console.log(sol.body);
+
+  let transporter = nodemailer.createTransport({
+    service: 'zoho',
+    auth: {
+      user: '',
+      pass: ''
+    }
+  });
+
+  let mailOptions = {
+    from: 'Informacion de formulario <>',
+    to: '',
+    subject: 'Contacto de persona',
+    text: sol.body.email,
+    html: mensaje(sol)
+  }
+
+  transporter.sendMail(mailOptions, (err, info) => {
+
+    if(err) res.json(err)
+    res.json(info)
+
+  });
 
 });
 
