@@ -7486,6 +7486,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 150px;
 }
 
+.slide-h3{
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.slide-p{
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 35px;
+}
+
 #fh5co-parallax{
   background: url('../images/colaborativo-parallax.png') no-repeat;
   background-size: cover;
