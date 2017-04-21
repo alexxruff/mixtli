@@ -1,9 +1,13 @@
-require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({4:[function(require,module,exports){
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({5:[function(require,module,exports){
 'use strict';
 
 var _uid = require('uid');
 
 var _uid2 = _interopRequireDefault(_uid);
+
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14,6 +18,7 @@ var myHeaders = new Headers({
 
 function subida(e) {
   var formData = new FormData(document.querySelector('#cursos'));
+  document.querySelector('#cargando').innerHTML = 'Creando curso... espere un momento';
   e.preventDefault();
 
   fetch('/subir-archivos', {
@@ -23,7 +28,13 @@ function subida(e) {
   }).then(function (data) {
     return data.json();
   }).then(function (data) {
-    return console.log(data);
+
+    var cargando = document.querySelector('#cargando');
+    cargando.innerHTML = "El curso se ha creado.";
+    obteniendo();
+    setTimeout(function () {
+      cargando.innerHTML = '';
+    }, 2000);
   }).catch(function (err) {
     console.log(err);
   });
@@ -32,7 +43,7 @@ function subida(e) {
 document.querySelector('#cursos').addEventListener('submit', subida);
 
 function eliminar(e) {
-  console.log(e.toElement.attributes['eliminar'].nodeValue);
+
   fetch('/eliminar', {
     method: 'DELETE',
     credentials: 'same-origin',
@@ -43,33 +54,38 @@ function eliminar(e) {
   }).then(function (res) {
     return res.json();
   }).then(function (res) {
-    return console.log(res);
+    obteniendo();
   }).catch(function (err) {
     console.log(err);
   });
 }
 
-fetch('/obtener').then(function (data) {
-  return data.json();
-}).then(function (data) {
-  var cursos = document.querySelector('#cursos-obt');
-  data.cursos.map(function (c) {
-    var id = (0, _uid2.default)(25);
-    var img = document.createElement('img');
-    img.className = "imagen-curso";
-    img.src = 'imagenes/' + c.imagen;
-    var contenedor = document.createElement('div');
-    contenedor.className = 'cursos-datos';
-    contenedor.innerHTML = '\n        <nav class="cabecera-curso">\n          <a href="/editar/' + c._id + '">Editar</a>\n          <label id="c' + id + '" eliminar=' + c._id + ' style="cursor: pointer;">Eliminar</label>\n        </nav>\n        <p>' + c.titulo + '</p>\n        <p>' + c.informacion + '</p>\n        <p>' + c.fecha + '</p>\n        <p>' + c.costo + '</p>\n      ';
-    contenedor.appendChild(img);
-    cursos.appendChild(contenedor);
-    document.querySelector('#c' + id).addEventListener('click', eliminar);
+function obteniendo(e) {
+  fetch('/obtener/' + 10).then(function (data) {
+    return data.json();
+  }).then(function (data) {
+    var cursos = document.querySelector('#cursos-obt');
+    cursos.innerHTML = '';
+    data.cursos.map(function (c) {
+      var id = (0, _uid2.default)(25);
+      var img = document.createElement('img');
+      img.className = "imagen-curso";
+      img.src = 'imagenes/' + c.imagen;
+      var contenedor = document.createElement('div');
+      contenedor.className = 'cursos-datos';
+      contenedor.innerHTML = '\n      <nav class="cabecera-curso">\n      <a href="/editar/' + c._id + '">Editar</a>\n      <label id="c' + id + '" eliminar=' + c._id + ' style="cursor: pointer;">Eliminar</label>\n      </nav>\n      <p class="titulo">' + c.titulo + '</p>\n      <p class="informacion">' + c.informacion + '</p>\n      <p class="fecha">Fecha del curso ' + (0, _moment2.default)(c.fecha).add(1, 'days').format('YYYY-MM-DD') + '</p>\n      <p class="costo">Precio $' + c.costo + '</p>\n      ';
+      contenedor.appendChild(img);
+      cursos.appendChild(contenedor);
+      document.querySelector('#c' + id).addEventListener('click', eliminar);
+    });
+  }).catch(function (err) {
+    console.log(err);
   });
-}).catch(function (err) {
-  console.log(err);
-});
+}
 
-},{"uid":1}],1:[function(require,module,exports){
+obteniendo();
+
+},{"moment":1,"uid":2}],2:[function(require,module,exports){
 /**
  * Export `uid`
  */
@@ -88,4 +104,4 @@ function uid(len) {
   return Math.random().toString(35).substr(2, len);
 }
 
-},{}]},{},[4]);
+},{}]},{},[5]);
