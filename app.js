@@ -80,7 +80,7 @@ app.get('/editar/:id', (sol, res) => {
       if(data == null){
         res.redirect('/');
       }else {
-        res.render('editar',{ info: data, fecha: moment(data.fecha).format('YYYY-MM-DD')});
+        res.render('editar',{ info: data, fecha: moment(data.fecha).add(1, 'days').format('YYYY-MM-DD')});
       }
 
     })
@@ -90,9 +90,9 @@ app.get('/editar/:id', (sol, res) => {
 
 });
 
-app.get('/obtener', (sol, res) => {
+app.get('/obtener/:limite', (sol, res) => {
 
-  schema.cursos.find({}, null, {limit: 10})
+  schema.cursos.find({}, null, {limit: Number(sol.params.limite)})
     .sort({_id: -1})
     .then(data => res.json({cursos: data}))
     .catch(err => {
@@ -101,10 +101,20 @@ app.get('/obtener', (sol, res) => {
 
 });
 
+app.get('/editando/:id', (sol, res)=> {
+  schema.cursos.findOne({"_id": sol.params.id})
+    .then(data => {
+
+      res.json({ info: data});
+
+    })
+    .catch(err => {
+      throw err;
+    })
+});
+
 // Envio de correos desde el formulario
 app.post('/formulario', (sol, res)=> {
-
-  console.log(sol.body);
 
   let transporter = nodemailer.createTransport({
     service: 'zoho',
@@ -151,7 +161,6 @@ app.post('/subir-archivos', subida.single('cursos'), (sol, res)=> {
 
 app.put('/editar', subida.single('cursos'), (sol, res)=> {
 
-  console.log(sol.body.fecha);
   let actualizacion = sol.file == undefined ? {titulo: sol.body.titulo, fecha: sol.body.fecha, informacion: sol.body.informacion, costo: sol.body.costo} : {titulo: sol.body.titulo, fecha: sol.body.fecha, informacion: sol.body.informacion, imagen: sol.file.filename, costo: sol.body.costo}
 
   schema.cursos.update({"_id": sol.body.id}, actualizacion, err => {
@@ -170,7 +179,7 @@ app.put('/editar', subida.single('cursos'), (sol, res)=> {
 });
 
 app.delete('/eliminar', (sol, res)=> {
-  console.log(sol.body);
+
   schema.cursos.findOneAndRemove({"_id": sol.body.id}, (err, resp) =>{
 
     if(err){

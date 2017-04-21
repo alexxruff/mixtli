@@ -2,19 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>mextli</title>
+    <title>Mixtli</title>
+    <link rel="stylesheet" href="/css/subida.css">
   </head>
   <body>
-    <h1>Mextli</h1>
-    <form id="cursos" enctype="multipart/form-data">
-      <input type="text" name="titulo" value="{{ info.titulo }}">
-      <input type="date" name="fecha" value="{{ fecha }}">
-      <textarea name="informacion">{{ info.informacion }}</textarea>
-      <input type="file" name="cursos">
-      <input type="number" name="costo" value="{{ info.costo }}">
-      <input type="hidden" value="{{ info._id }}" name="id" id="id">
-      <input type="submit" value="Actualizar">
-    </form>
+    <nav class="cabecera">
+      <a href="/agregando-cursos">Agregar cursos</a>
+      <label>Actualizar cursos </label>
+    </nav>
+    <div class="contenido">
+      <form id="cursos" enctype="multipart/form-data" class="formulario">
+        <input type="text" name="titulo" placeholder="Titulo" value="{{ info.titulo }}">
+        <input type="date" name="fecha" value="{{ fecha }}">
+        <textarea name="informacion" placeholder="Información del curso">{{ info.informacion }}</textarea>
+        <input type="file" name="cursos">
+        <input type="number" name="costo" placeholder="Costo del curso" value="{{ info.costo }}">
+        <input type="hidden" value="{{ info._id }}" name="id" id="id">
+        <input type="submit" class="submit" value="Actualizar">
+        <label id="cargando"></label>
+      </form>
+      <div id="cursos-obt" class="cursos-obt">
+
+      </div>
+    </div>
+    <script src="/js/global.js"></script>
     <script src="/js/editar.js">
     </script>
   </body>

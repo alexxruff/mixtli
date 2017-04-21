@@ -34,3 +34,10 @@ document.querySelector('#form-contact').addEventListener('submit', (e)=> {
     console.log(err);
   });
 });
+
+fetch(`/obtener/${3}`)
+.then(data => data.json())
+.then(data => console.log(data))
+.catch(err => {
+  console.log(err);
+});

@@ -10,7 +10,8 @@ cat.server({
 cat.browserify({
   original: ['./static/js/script.js', './static/js/edit.js', './static/js/contact.js'],
   compilado: ['./static/js/subida.js','./static/js/editar.js', './static/js/contacto.js'],
-  presets: 'es2015'
+  common: './static/js/global.js',
+  presets: ['es2015']
 });
 
 cat.stylus({
