@@ -49,13 +49,15 @@ fetch('/obtener')
     data.cursos.map(c => {
       let id = uid(25);
       let img = document.createElement('img');
-      img.width  = "300";
-      img.height = "300";
+      img.className = "imagen-curso";
       img.src = `imagenes/${c.imagen}`;
       let contenedor = document.createElement('div');
+      contenedor.className = 'cursos-datos';
       contenedor.innerHTML = `
-        <a href="/editar/${c._id}">Editar</a>
-        <label id="c${id}" eliminar=${c._id} style="cursor: pointer;">Eliminar</a>
+        <nav class="cabecera-curso">
+          <a href="/editar/${c._id}">Editar</a>
+          <label id="c${id}" eliminar=${c._id} style="cursor: pointer;">Eliminar</label>
+        </nav>
         <p>${c.titulo}</p>
         <p>${c.informacion}</p>
         <p>${c.fecha}</p>

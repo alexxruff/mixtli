@@ -1,4 +1,4 @@
-require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({3:[function(require,module,exports){
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({4:[function(require,module,exports){
 'use strict';
 
 var _uid = require('uid');
@@ -56,11 +56,11 @@ fetch('/obtener').then(function (data) {
   data.cursos.map(function (c) {
     var id = (0, _uid2.default)(25);
     var img = document.createElement('img');
-    img.width = "300";
-    img.height = "300";
+    img.className = "imagen-curso";
     img.src = 'imagenes/' + c.imagen;
     var contenedor = document.createElement('div');
-    contenedor.innerHTML = '\n        <a href="/editar/' + c._id + '">Editar</a>\n        <label id="c' + id + '" eliminar=' + c._id + ' style="cursor: pointer;">Eliminar</a>\n        <p>' + c.titulo + '</p>\n        <p>' + c.informacion + '</p>\n        <p>' + c.fecha + '</p>\n        <p>' + c.costo + '</p>\n      ';
+    contenedor.className = 'cursos-datos';
+    contenedor.innerHTML = '\n        <nav class="cabecera-curso">\n          <a href="/editar/' + c._id + '">Editar</a>\n          <label id="c' + id + '" eliminar=' + c._id + ' style="cursor: pointer;">Eliminar</label>\n        </nav>\n        <p>' + c.titulo + '</p>\n        <p>' + c.informacion + '</p>\n        <p>' + c.fecha + '</p>\n        <p>' + c.costo + '</p>\n      ';
     contenedor.appendChild(img);
     cursos.appendChild(contenedor);
     document.querySelector('#c' + id).addEventListener('click', eliminar);
@@ -88,4 +88,4 @@ function uid(len) {
   return Math.random().toString(35).substr(2, len);
 }
 
-},{}]},{},[3]);
+},{}]},{},[4]);
