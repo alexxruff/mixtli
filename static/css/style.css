@@ -7472,7 +7472,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 32px;
 }
 .nosotros-logo{
-  height: 100%;
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -7737,8 +7736,47 @@ h1, h2, h3, h4, h5, h6 {
   #fh5co-hero {
     padding-top: 2em;
     padding-bottom: 2em;
-    height: inherit;
+    height: 370px;
   }
+  .nosotros-t{
+    font-size: 40px !important;
+  } 
+
+  .nosotros-p{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .nosotros-logo{
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-around;
+  }
+  .nosotros-logo .logo-mixtli-1{
+    width: 150px;
+  }
+  .nosotros-logo .logo-mixtli-2{
+    width: 80px;
+  }
+  .parallax-info p{
+    font-size: 45px;
+    line-height: 46px;
+  }
+  #fh5co-beneficios{
+    font-size: 30px;
+  }
+  .slide-h3{
+    font-size: 35px;
+    margin-bottom: 5px;
+  }
+  .slide-p{
+    font-size: 24px;
+    line-height: 25px;
+    font-weight: 200;
+    margin-bottom: 7px;
+  }
+
 }
 #fh5co-hero .fh5co-intro {
   width: 100%;
