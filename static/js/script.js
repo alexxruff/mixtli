@@ -1,6 +1,7 @@
 'use strict';
 
 import uid from 'uid';
+import moment from 'moment';
 
 const myHeaders = new Headers({
   'Accept': 'application/json',
@@ -9,6 +10,7 @@ const myHeaders = new Headers({
 
 function subida(e){
   let formData = new FormData(document.querySelector('#cursos'));
+  document.querySelector('#cargando').innerHTML = 'Creando curso... espere un momento';
   e.preventDefault();
 
   fetch('/subir-archivos', {
@@ -17,7 +19,16 @@ function subida(e){
     body: formData
   })
   .then(data => data.json())
-  .then(data => console.log(data))
+  .then(data => {
+
+    let cargando = document.querySelector('#cargando');
+    cargando.innerHTML = "El curso se ha creado.";
+    obteniendo();
+    setTimeout(()=>{
+      cargando.innerHTML = '';
+    }, 2000);
+
+  })
   .catch(err => {
     console.log(err);
   });
@@ -26,7 +37,7 @@ function subida(e){
 document.querySelector('#cursos').addEventListener('submit', subida);
 
 function eliminar(e){
-  console.log(e.toElement.attributes['eliminar'].nodeValue);
+
   fetch('/eliminar', {
     method: 'DELETE',
     credentials: 'same-origin',
@@ -36,16 +47,20 @@ function eliminar(e){
     })
   })
     .then( res => res.json())
-    .then( res => console.log(res))
+    .then( res => {
+      obteniendo();
+    })
     .catch(err => {
       console.log(err);
     });
 }
 
-fetch('/obtener')
+function obteniendo(e){
+  fetch(`/obtener/${10}`)
   .then(data => data.json())
   .then(data => {
     let cursos = document.querySelector('#cursos-obt');
+    cursos.innerHTML = '';
     data.cursos.map(c => {
       let id = uid(25);
       let img = document.createElement('img');
@@ -54,14 +69,14 @@ fetch('/obtener')
       let contenedor = document.createElement('div');
       contenedor.className = 'cursos-datos';
       contenedor.innerHTML = `
-        <nav class="cabecera-curso">
-          <a href="/editar/${c._id}">Editar</a>
-          <label id="c${id}" eliminar=${c._id} style="cursor: pointer;">Eliminar</label>
-        </nav>
-        <p>${c.titulo}</p>
-        <p>${c.informacion}</p>
-        <p>${c.fecha}</p>
-        <p>${c.costo}</p>
+      <nav class="cabecera-curso">
+      <a href="/editar/${c._id}">Editar</a>
+      <label id="c${id}" eliminar=${c._id} style="cursor: pointer;">Eliminar</label>
+      </nav>
+      <p class="titulo">${c.titulo}</p>
+      <p class="informacion">${c.informacion}</p>
+      <p class="fecha">Fecha del curso ${moment(c.fecha).add(1, 'days').format('YYYY-MM-DD')}</p>
+      <p class="costo">Precio $${c.costo}</p>
       `
       contenedor.appendChild(img);
       cursos.appendChild(contenedor);
@@ -71,3 +86,6 @@ fetch('/obtener')
   .catch(err => {
     console.log(err);
   });
+}
+
+obteniendo();
