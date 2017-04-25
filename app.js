@@ -32,7 +32,7 @@ app.set('view engine', 'html');
 
   console.log('conexion a la base de datos realizada');
 
-});*/
+});
 
 // Destino donde se colocaran las imagenes subidas
 const storage = multer.diskStorage({
@@ -194,6 +194,9 @@ app.delete('/eliminar', (sol, res)=> {
 
   });
 });
-
+*/
 // Levantamos el Servidor
+app.get('/', (sol, res)=> {
+  res.json({h:"hola"});
+});
 app.listen(2000, () => console.log('servidor ejecutanose en el puerto 2000'));
