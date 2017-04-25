@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, './static/')));
 app.set('view engine', 'html');
 
 // Hacemos la conexion a la base de datos
-/*const connect = mongoose.connect('mongodb://mixtli:m1xtli@ds119151.mlab.com:19151/mixtli', (err, data) => {
+const connect = mongoose.connect('mongodb://mixtli:m1xtli@ds119151.mlab.com:19151/mixtli', (err, data) => {
 
   if(err) throw err;
 
@@ -194,9 +194,6 @@ app.delete('/eliminar', (sol, res)=> {
 
   });
 });
-*/
+
 // Levantamos el Servidor
-app.get('/', (sol, res)=> {
-  res.json({h:"hola"});
-});
 app.listen(process.env.PORT);
