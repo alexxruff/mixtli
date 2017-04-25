@@ -1,5 +1,7 @@
 'use strict';
 
+import moment from 'moment';
+
 const myHeaders = new Headers({
   'Accept': 'application/json',
   'Content-Type': 'application/json'
@@ -37,7 +39,27 @@ document.querySelector('#form-contact').addEventListener('submit', (e)=> {
 
 fetch(`/obtener/${3}`)
 .then(data => data.json())
-.then(data => console.log(data))
+.then(data => {
+  let cursos = document.querySelector('#vista-cursos');
+  data.cursos.map(c => {
+
+    let img = document.createElement('img');
+    img.className = 'imagen-de-cursos';
+    img.src = `/imagenes/${c.imagen}`;
+    let contenedor = document.createElement('div');
+    contenedor.className = 'contenedor-curso-article';
+    contenedor.innerHTML = `
+      ${c.titulo}
+      ${c.informacion}
+      ${moment(c.fecha).add(1, 'days').format('YYYY-MM-DD')}
+      ${c.costo}
+    `;
+
+    contenedor.appendChild(img);
+    cursos.appendChild(contenedor);
+
+  });
+})
 .catch(err => {
   console.log(err);
 });
