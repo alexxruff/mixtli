@@ -4,7 +4,7 @@
   "description": "Servicios de G-Suit",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Benjamin de la cruz martinez <benjamin@kimvex.com>",
   "license": "ISC",
