@@ -199,4 +199,4 @@ app.delete('/eliminar', (sol, res)=> {
 app.get('/', (sol, res)=> {
   res.json({h:"hola"});
 });
-app.listen(2000, () => console.log('servidor ejecutanose en el puerto 2000'));
+app.listen(process.env.PORT);
