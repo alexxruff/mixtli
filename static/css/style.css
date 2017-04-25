@@ -7463,7 +7463,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400 !important;
   font-size: 48px !important;
-  color: #484848;
+  color: #30beac;
   margin: 30px 0; 
 }
 .nosotros-p{
@@ -7471,6 +7471,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 25px;
   line-height: 32px;
 }
+
 .nosotros-logo{
   height: 250px;
   display: flex;
