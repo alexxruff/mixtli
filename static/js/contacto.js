@@ -1,6 +1,12 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({3:[function(require,module,exports){
 'use strict';
 
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var myHeaders = new Headers({
   'Accept': 'application/json',
   'Content-Type': 'application/json'
@@ -37,9 +43,21 @@ document.querySelector('#form-contact').addEventListener('submit', function (e) 
 fetch('/obtener/' + 3).then(function (data) {
   return data.json();
 }).then(function (data) {
-  return console.log(data);
+  var cursos = document.querySelector('#vista-cursos');
+  data.cursos.map(function (c) {
+
+    var img = document.createElement('img');
+    img.className = 'imagen-de-cursos';
+    img.src = '/imagenes/' + c.imagen;
+    var contenedor = document.createElement('div');
+    contenedor.className = 'contenedor-curso-article';
+    contenedor.innerHTML = '\n      ' + c.titulo + '\n      ' + c.informacion + '\n      ' + (0, _moment2.default)(c.fecha).add(1, 'days').format('YYYY-MM-DD') + '\n      ' + c.costo + '\n    ';
+
+    contenedor.appendChild(img);
+    cursos.appendChild(contenedor);
+  });
 }).catch(function (err) {
   console.log(err);
 });
 
-},{}]},{},[3]);
+},{"moment":1}]},{},[3]);
