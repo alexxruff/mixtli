@@ -7650,7 +7650,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #30beac;
   font-size: 22px;
 }
-
 #fh5co-offcanvass {
   position: fixed;
   z-index: 90;
@@ -7670,6 +7669,11 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   color: #878c93;
 }
+.logo-chkd{
+  width: 100px;
+  height: 100px;
+}
+
 #fh5co-offcanvass .fh5co-lead {
   font-size: 12px;
   letter-spacing: 2px;
