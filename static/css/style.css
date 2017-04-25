@@ -7607,6 +7607,49 @@ h1, h2, h3, h4, h5, h6 {
 .video-m{
   margin: 35px 0px;
 }
+#vista-cursos{
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+#vista-cursos .contenedor-curso-article{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0,0,0,.3) 0px 0px 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+#vista-cursos .contenedor-curso-article h3{
+  margin: 0;
+  color: #30beac;
+}
+#vista-cursos .contenedor-curso-article img{
+  width: 100%;
+}
+#vista-cursos .contenedor-curso-article p{
+  margin: 0;
+  text-align: left;
+  height: 180px;
+  overflow-y: scroll;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0,0,0,.6);
+  line-height: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 8px; 
+}
+#vista-cursos .contenedor-curso-article .fecha{
+  font-weight: 400;
+  font-size: 20px;
+}
+#vista-cursos .contenedor-curso-article .costo{
+  font-weight: 600;
+  color: #30beac;
+  font-size: 22px;
+}
 
 #fh5co-offcanvass {
   position: fixed;
@@ -7796,6 +7839,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 7px;
   }
 
+
 }
 #fh5co-hero .fh5co-intro {
   width: 100%;
@@ -7824,6 +7868,14 @@ h1, h2, h3, h4, h5, h6 {
   #fh5co-hero .fh5co-intro .fh5co-text {
     bottom: 0;
     bottom: -4em;
+  }
+  #vista-cursos{
+    flex-direction: column;
+  }
+
+  #vista-cursos .contenedor-curso-article{ 
+    margin: 20px 0px;
+    width: 400px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -7934,6 +7986,10 @@ h1, h2, h3, h4, h5, h6 {
   }
   #fh5co-videos{
     display: none;
+  }
+  #vista-cursos .contenedor-curso-article{ 
+    margin: 20px 0px;
+    width: 300px;
   }
 }
 

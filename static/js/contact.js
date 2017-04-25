@@ -43,19 +43,15 @@ fetch(`/obtener/${3}`)
   let cursos = document.querySelector('#vista-cursos');
   data.cursos.map(c => {
 
-    let img = document.createElement('img');
-    img.className = 'imagen-de-cursos';
-    img.src = `/imagenes/${c.imagen}`;
     let contenedor = document.createElement('div');
     contenedor.className = 'contenedor-curso-article';
     contenedor.innerHTML = `
-      ${c.titulo}
-      ${c.informacion}
-      ${moment(c.fecha).add(1, 'days').format('YYYY-MM-DD')}
-      ${c.costo}
+      <h3>${c.titulo}</h3>
+      <img src='/imagenes/${c.imagen}' class="imagen-de-cursos">
+      <p>${c.informacion}</p>
+      <span class="fecha">Fecha: ${moment(c.fecha).add(1, 'days').format('YYYY-MM-DD')}</span>
+      <span class="costo">Costo $${c.costo} pesos</span>
     `;
-
-    contenedor.appendChild(img);
     cursos.appendChild(contenedor);
 
   });

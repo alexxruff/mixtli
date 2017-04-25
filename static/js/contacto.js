@@ -46,14 +46,9 @@ fetch('/obtener/' + 3).then(function (data) {
   var cursos = document.querySelector('#vista-cursos');
   data.cursos.map(function (c) {
 
-    var img = document.createElement('img');
-    img.className = 'imagen-de-cursos';
-    img.src = '/imagenes/' + c.imagen;
     var contenedor = document.createElement('div');
     contenedor.className = 'contenedor-curso-article';
-    contenedor.innerHTML = '\n      ' + c.titulo + '\n      ' + c.informacion + '\n      ' + (0, _moment2.default)(c.fecha).add(1, 'days').format('YYYY-MM-DD') + '\n      ' + c.costo + '\n    ';
-
-    contenedor.appendChild(img);
+    contenedor.innerHTML = '\n      <h3>' + c.titulo + '</h3>\n      <img src=\'/imagenes/' + c.imagen + '\' class="imagen-de-cursos">\n      <p>' + c.informacion + '</p>\n      <span class="fecha">Fecha: ' + (0, _moment2.default)(c.fecha).add(1, 'days').format('YYYY-MM-DD') + '</span>\n      <span class="costo">Costo $' + c.costo + ' pesos</span>\n    ';
     cursos.appendChild(contenedor);
   });
 }).catch(function (err) {
