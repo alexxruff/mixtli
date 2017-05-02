@@ -7515,7 +7515,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-size: 35px;
   line-height: 40px;
-  text-shadow: rgba(0,0,0,.3) 0px 0px 10px;
+  color: #ffffff;
+  text-shadow: rgba(0,0,0,.8) 0px 0px 20px;
 }
 
 #fh5co-info-colaborativa{
@@ -8193,7 +8194,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #4fd2c2;
 }
 .img-suite-servicio{
-  width: 120px;
+  width: 70px;
 }
 @media screen and (max-width: 1200px) {
   #fh5co-features-2 .fh5co-text-wrap {
