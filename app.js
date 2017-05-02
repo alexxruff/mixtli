@@ -9,6 +9,8 @@ const fs         = require('fs-extra');
 const nunjucks   = require('nunjucks');
 const moment     = require('moment');
 const nodemailer = require('nodemailer');
+const cloudinary = require('cloudinary');
+const co         = require('co');
 const mongoose   = require('mongoose');
 mongoose.Promise = global.Promise;
 
@@ -26,7 +28,7 @@ app.use(express.static(path.join(__dirname, './static/')));
 app.set('view engine', 'html');
 
 // Hacemos la conexion a la base de datos
-const connect = mongoose.connect('mongodb://localhost/mextli', (err, data) => {
+const connect = mongoose.connect('mongodb://mixtli:m1xtli@ds119151.mlab.com:19151/mixtli', (err, data) => {
 
   if(err) throw err;
 
@@ -36,9 +38,6 @@ const connect = mongoose.connect('mongodb://localhost/mextli', (err, data) => {
 
 // Destino donde se colocaran las imagenes subidas
 const storage = multer.diskStorage({
-  destination(sol, file, fn){
-    fn(null, path.join(__dirname, './static/imagenes'));
-  },
   filename(sol, file, fn){
     fn(null, Date.now() + file.originalname);
   }
@@ -53,6 +52,26 @@ const subida = multer({
     next(err);
   }
 });
+
+cloudinary.config({
+  cloud_name: 'dbkahwgqc',
+  api_key: '845839249496492',
+  api_secret: 'NMT0LJk40vx1W927FxSHljgPMPE'
+});
+
+function actualizacion(lugar){
+  return new Promise((resolve, reject)=>{
+
+    if(lugar == undefined){
+      resolve(false);
+    }else{
+      cloudinary.uploader.upload( lugar, (result) => {
+        resolve(result.secure_url);
+      });
+    }
+
+  });
+}
 
 // Configuracion del mototo de vistas
 nunjucks.configure(path.join(__dirname, './templates'), {
@@ -143,38 +162,60 @@ app.post('/formulario', (sol, res)=> {
 
 app.post('/subir-archivos', subida.single('cursos'), (sol, res)=> {
 
-  let curso = new schema.cursos({
-    titulo: sol.body.titulo,
-    fecha: sol.body.fecha,
-    informacion: sol.body.informacion,
-    imagen: sol.file.filename,
-    costo: sol.body.costo
-  });
+  cloudinary.uploader.upload( sol.file.path, (result) => {
 
-  curso.save()
+    let curso = new schema.cursos({
+      titulo: sol.body.titulo,
+      fecha: sol.body.fecha,
+      informacion: sol.body.informacion,
+      imagen: result.secure_url,
+      costo: sol.body.costo
+    });
+
+    curso.save()
     .then(data => res.json({succes: true}))
     .catch(err => {
       res.json({succes: err});
     });
 
+  });
+
+
 });
 
 app.put('/editar', subida.single('cursos'), (sol, res)=> {
 
-  let actualizacion = sol.file == undefined ? {titulo: sol.body.titulo, fecha: sol.body.fecha, informacion: sol.body.informacion, costo: sol.body.costo} : {titulo: sol.body.titulo, fecha: sol.body.fecha, informacion: sol.body.informacion, imagen: sol.file.filename, costo: sol.body.costo}
+  let nuevaImg = co.wrap(function* (ruta){
 
-  schema.cursos.update({"_id": sol.body.id}, actualizacion, err => {
+    let actualiza = yield actualizacion(ruta).then(name => name)
 
-    if(err)
-    {
-      throw err
-    }else{
-
-      res.json({success: true});
-
-    }
-
+    return actualiza;
   });
+
+  nuevaImg(sol.file == undefined ? undefined : sol.file.path)
+    .then(img => {
+
+      let actualizacion = img == false ? {titulo: sol.body.titulo, fecha: sol.body.fecha, informacion: sol.body.informacion, costo: sol.body.costo} : {titulo: sol.body.titulo, fecha: sol.body.fecha, informacion: sol.body.informacion, imagen: img, costo: sol.body.costo}
+
+      schema.cursos.update({"_id": sol.body.id}, actualizacion, err => {
+
+        if(err)
+        {
+          throw err
+        }else{
+
+          res.json({success: true});
+
+        }
+
+      });
+
+    })
+    .catch(err => {
+
+      throw err;
+
+    });
 
 });
 
@@ -196,4 +237,4 @@ app.delete('/eliminar', (sol, res)=> {
 });
 
 // Levantamos el Servidor
-app.listen(2000, () => console.log('servidor ejecutanose en el puerto 2000'));
+app.listen(process.env.PORT);
