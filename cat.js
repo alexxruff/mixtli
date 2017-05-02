@@ -3,6 +3,9 @@
 const cat = require('catlistener');
 
 cat.server({
+  enviroment: {
+    PORT: 3000
+  },
   node: 'supervisor',
   app: 'app'
 });

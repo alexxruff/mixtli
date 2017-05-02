@@ -45,7 +45,7 @@ function obteniendo(e) {
     cursos.innerHTML = '';
     var img = document.createElement('img');
     img.className = "imagen-curso";
-    img.src = '/imagenes/' + c.info.imagen;
+    img.src = c.info.imagen;
     var contenedor = document.createElement('div');
     contenedor.className = 'cursos-datos';
     contenedor.innerHTML = '\n    <p class="titulo">' + c.info.titulo + '</p>\n    <p class="informacion">' + c.info.informacion + '</p>\n    <p class="fecha">Fecha del curso ' + (0, _moment2.default)(c.info.fecha).add(1, 'days').format('YYYY-MM-DD') + '</p>\n    <p class="costo">Precio $' + c.info.costo + '</p>\n    ';

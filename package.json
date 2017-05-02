@@ -4,12 +4,14 @@
   "description": "Servicios de G-Suit",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Benjamin de la cruz martinez <benjamin@kimvex.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "cloudinary": "^1.9.0",
+    "co": "^4.6.0",
     "express": "^4.15.2",
     "fs-extra": "^2.1.2",
     "moment": "^2.18.1",

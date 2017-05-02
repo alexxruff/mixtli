@@ -48,7 +48,7 @@ fetch('/obtener/' + 3).then(function (data) {
 
     var contenedor = document.createElement('div');
     contenedor.className = 'contenedor-curso-article';
-    contenedor.innerHTML = '\n      <h3>' + c.titulo + '</h3>\n      <img src=\'/imagenes/' + c.imagen + '\' class="imagen-de-cursos">\n      <p>' + c.informacion + '</p>\n      <span class="fecha">Fecha: ' + (0, _moment2.default)(c.fecha).add(1, 'days').format('YYYY-MM-DD') + '</span>\n      <span class="costo">Costo $' + c.costo + ' pesos</span>\n    ';
+    contenedor.innerHTML = '\n      <h3>' + c.titulo + '</h3>\n      <img src=' + c.imagen + ' class="imagen-de-cursos">\n      <p>' + c.informacion + '</p>\n      <span class="fecha">Fecha: ' + (0, _moment2.default)(c.fecha).add(1, 'days').format('YYYY-MM-DD') + '</span>\n      <span class="costo">Costo $' + c.costo + ' pesos</span>\n    ';
     cursos.appendChild(contenedor);
   });
 }).catch(function (err) {

@@ -65,7 +65,7 @@ function obteniendo(e){
       let id = uid(25);
       let img = document.createElement('img');
       img.className = "imagen-curso";
-      img.src = `imagenes/${c.imagen}`;
+      img.src = c.imagen;
       let contenedor = document.createElement('div');
       contenedor.className = 'cursos-datos';
       contenedor.innerHTML = `
