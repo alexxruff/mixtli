@@ -7463,7 +7463,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400 !important;
   font-size: 48px !important;
-  color: #30beac;
+  color: #673AB7;
   margin: 30px 0; 
 }
 .nosotros-p{
@@ -7624,7 +7624,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #vista-cursos .contenedor-curso-article h3{
   margin: 0;
-  color: #30beac;
+  color: #673AB7;
 }
 #vista-cursos .contenedor-curso-article img{
   width: 100%;
@@ -7647,7 +7647,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #vista-cursos .contenedor-curso-article .costo{
   font-weight: 600;
-  color: #30beac;
+  color: #673AB7;
   font-size: 22px;
 }
 #fh5co-offcanvass {
@@ -8093,7 +8093,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  background: #30beac;
+  background: #673AB7;
 }
 #fh5co-subscribe .btn i {
   font-size: 20px;
