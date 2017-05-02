@@ -70,7 +70,7 @@ function obteniendo(e) {
       var id = (0, _uid2.default)(25);
       var img = document.createElement('img');
       img.className = "imagen-curso";
-      img.src = 'imagenes/' + c.imagen;
+      img.src = c.imagen;
       var contenedor = document.createElement('div');
       contenedor.className = 'cursos-datos';
       contenedor.innerHTML = '\n      <nav class="cabecera-curso">\n      <a href="/editar/' + c._id + '">Editar</a>\n      <label id="c' + id + '" eliminar=' + c._id + ' style="cursor: pointer;">Eliminar</label>\n      </nav>\n      <p class="titulo">' + c.titulo + '</p>\n      <p class="informacion">' + c.informacion + '</p>\n      <p class="fecha">Fecha del curso ' + (0, _moment2.default)(c.fecha).add(1, 'days').format('YYYY-MM-DD') + '</p>\n      <p class="costo">Precio $' + c.costo + '</p>\n      ';

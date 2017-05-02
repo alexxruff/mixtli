@@ -47,7 +47,7 @@ fetch(`/obtener/${3}`)
     contenedor.className = 'contenedor-curso-article';
     contenedor.innerHTML = `
       <h3>${c.titulo}</h3>
-      <img src='/imagenes/${c.imagen}' class="imagen-de-cursos">
+      <img src=${c.imagen} class="imagen-de-cursos">
       <p>${c.informacion}</p>
       <span class="fecha">Fecha: ${moment(c.fecha).add(1, 'days').format('YYYY-MM-DD')}</span>
       <span class="costo">Costo $${c.costo} pesos</span>
