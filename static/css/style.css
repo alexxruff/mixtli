@@ -8046,6 +8046,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 28px;
   font-weight: 400;
 }
+.partners-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.partners-img{
+  width: 210px;
+}
 #fh5co-pricing {
   padding: 7em 0;
   position: relative;
