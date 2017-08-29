@@ -7462,7 +7462,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400 !important;
   font-size: 48px !important;
-  color: #741f8a;
+  color: #3c78d8;
   margin: 30px 0; 
 }
 .nosotros-p{
@@ -7475,14 +7475,14 @@ h1, h2, h3, h4, h5, h6 {
   height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .nosotros-logo .logo-mixtli-1{
   width: 250px;
 }
 .nosotros-logo .logo-mixtli-2{
-  width: 150px;
+  width: 350px;
 }
 
 .slide-h3{
@@ -7711,10 +7711,10 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-offcanvass ul li a:hover, #fh5co-offcanvass ul li a:focus, #fh5co-offcanvass ul li a:active {
   outline: none;
   text-decoration: none;
-  color: #741f8a;
+  color: #3c78d8;
 }
 #fh5co-offcanvass ul li.active a {
-  color: #741f8a !important;
+  color: #3c78d8 !important;
 }
 #fh5co-offcanvass.fh5co-awake {
   -webkit-transform: translateX(0px);
@@ -7807,7 +7807,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   z-index: 9;
   background: #000000;
-  opacity: .5;
+  opacity: .2;
 }
 @media screen and (max-width: 769px) {
   #fh5co-hero {
@@ -7831,10 +7831,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-around;
   }
   .nosotros-logo .logo-mixtli-1{
-    width: 150px;
+    width: 250px;
   }
   .nosotros-logo .logo-mixtli-2{
-    width: 80px;
+    width: 250px;
   }
   .parallax-info p{
     font-size: 45px;
@@ -8006,6 +8006,17 @@ h1, h2, h3, h4, h5, h6 {
     margin: 20px 0px;
     width: 300px;
   }
+  .nosotros-logo{
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+  .nosotros-logo .logo-mixtli-1{
+    width: 250px;
+  }
+  .nosotros-logo .logo-mixtli-2{
+    width: 250px;
+  }
 }
 
 .scrolled .navbar-brand {
@@ -8026,19 +8037,38 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-clients .fh5co-client {
   margin-bottom: 0px;
 }
+
+.partners-img{
+  width: 190px;
+}
 @media screen and (max-width: 992px) {
   #fh5co-clients .fh5co-client {
     margin-bottom: 30px;
+  }
+  .partners-img{
+    width: 130px;
   }
 }
 @media screen and (max-width: 768px) {
   #fh5co-clients .fh5co-client {
     margin-bottom: 30px;
   }
+  .partners-img{
+    width: 100px;
+  }
 }
 @media screen and (max-width: 480px) {
   #fh5co-clients .fh5co-client img {
     max-width: 100%;
+  }
+  .partners-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .partners-img{
+    width: 250px;
   }
 }
 .partners{
@@ -8051,9 +8081,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
 }
-.partners-img{
-  width: 210px;
-}
+
 #fh5co-pricing {
   padding: 7em 0;
   position: relative;
@@ -8112,7 +8140,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  background: #6e0880;
+  background: #3c78d8;
 }
 #fh5co-subscribe .btn i {
   font-size: 20px;
@@ -8234,7 +8262,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 #fh5co-features-2 .fh5co-icon i {
-  color: #741f8a;
+  color: #f1c232;
   font-size: 70px;
 }
 @media screen and (max-width: 992px) {
@@ -8669,7 +8697,7 @@ pre {
 }
 .btn:hover, .btn:focus, .btn:active {
   outline: none !important;
-  background: #7c0890 !important;
+  background: #1354bd !important;
   border-color: transparent !important;
 }
 .btn:hover {
@@ -8989,7 +9017,7 @@ pre {
 
 .fh5co-social-icons > a {
   margin-right: 10px;
-  color: #741f8a;
+  color: #3c78d8;
 }
 .fh5co-social-icons > a:hover, .fh5co-social-icons > a:focus, .fh5co-social-icons > a:active {
   text-decoration: none;
@@ -9038,10 +9066,10 @@ pre {
   background: #000;
 }
 .scrolled .fh5co-nav-toggle i {
-  background: #741f8a;
+  background: #3c78d8;
 }
 .scrolled .fh5co-nav-toggle i::before, .scrolled .fh5co-nav-toggle i::after {
-  background: #741f8a;
+  background: #3c78d8;
 }
 
 .fh5co-nav-toggle i::before {
@@ -9116,7 +9144,7 @@ pre {
   text-transform: uppercase;
 }
 .scrolled .fh5co-nav-toggle > span {
-  color: #741f8a;
+  color: #3c78d8;
 }
 
 .owl-carousel .owl-controls,
