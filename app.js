@@ -136,17 +136,17 @@ app.get('/editando/:id', (sol, res)=> {
 app.post('/formulario', (sol, res)=> {
 
   let transporter = nodemailer.createTransport({
-    service: 'zoho',
+    service: 'gmail',
     auth: {
-      user: '',
-      pass: ''
+      user: 'contactopaginamixtli@gmail.com',
+      pass: 'contactomixtli'
     }
   });
 
   let mailOptions = {
     from: 'Informacion de formulario <>',
-    to: '',
-    subject: 'Contacto de persona',
+    to: 'contacto@mixtlimx.com',
+    subject: 'Contacto de Página Mixtli',
     text: sol.body.email,
     html: mensaje(sol)
   }
