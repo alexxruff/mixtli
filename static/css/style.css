@@ -1399,7 +1399,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -6544,7 +6544,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6666,7 +6666,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -7332,7 +7332,7 @@ button.close {
 *
 * ======================================================= */
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+ font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
@@ -7364,7 +7364,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   font-weight: 700;
 }
@@ -7458,15 +7458,29 @@ h1, h2, h3, h4, h5, h6 {
   color: #484848 !important;
   height: 400px;
 }
+.for-education-logo{
+  height: 85px;
+  width: 430px;
+}
+.partners-premium{
+  margin-top: 25px;
+}  
+.partners-img-premium{
+  width: 150px;
+}  
+.partners-img-premium1{
+  width: 150px;
+  margin-left: 20px;
+}
 .nosotros-t{
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400 !important;
   font-size: 48px !important;
   color: #3c78d8;
   margin: 30px 0; 
 }
 .nosotros-f{
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400 !important;
   font-size: 48px !important;
   color: red;
@@ -7479,17 +7493,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nosotros-logo{
-  height: 250px;
+  height: 130px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content:center;
   align-items: center;
 }
 .nosotros-logo .logo-mixtli-1{
   width: 250px;
 }
 .nosotros-logo .logo-mixtli-2{
-  width: 350px;
+  width: 340px;
 }
 
 .sol-servicio{
@@ -7538,7 +7552,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 370px;
 }
 .parallax-info p{
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 35px;
   line-height: 40px;
@@ -7552,8 +7566,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #fh5co-info-colaborativa p{
   padding: 30px 0px;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   font-size: 28px;
   line-height: 35px;
 
@@ -7665,7 +7679,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: rgba(0,0,0,.6);
   line-height: 18px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding-top: 8px; 
 }
 #vista-cursos .contenedor-curso-article .fecha{
@@ -7757,7 +7771,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-size: 15px;
   letter-spacing: 2px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   z-index: 99;
   float: left;
@@ -7799,7 +7813,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 16px;
   position: relative;
   z-index: 10;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   color: #fff;
 }
@@ -7888,7 +7902,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   z-index: 12;
   position: relative;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-shadow: rgba(0,0,0,.5) 0px 0px 5px;
 }
 #fh5co-hero .fh5co-intro .fh5co-intro-img {
@@ -7914,7 +7928,9 @@ h1, h2, h3, h4, h5, h6 {
   #vista-cursos{
     flex-direction: column;
   }
-
+  .nosotros-logo{
+    height: 50px;
+  }
   #vista-cursos .contenedor-curso-article{ 
     margin: 20px 0px;
     width: 400px;
@@ -7973,7 +7989,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
   font-size: 20px;
   float: left !important;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   color: #fff;
   z-index: 10;
@@ -8051,6 +8067,13 @@ h1, h2, h3, h4, h5, h6 {
   .nosotros-logo .logo-mixtli-2{
     width: 250px;
   }
+  .partners-img-premium{
+    width: 120px;
+  }  
+  .partners-img-premium1{
+    width: 120px;
+    margin-left: 10px;
+  }
 }
 
 .scrolled .navbar-brand {
@@ -8091,6 +8114,22 @@ h1, h2, h3, h4, h5, h6 {
     width: 100px;
   }
 }
+@media screen and (max-width: 600px) {
+
+  .partners-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .partners-img{
+    width: 300px;
+  }
+  .for-education-logo{
+    width: 350px;
+    height: 75px;
+  }
+}
 @media screen and (max-width: 480px) {
   #fh5co-clients .fh5co-client img {
     max-width: 100%;
@@ -8126,14 +8165,14 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   font-size: 50px;
   line-height: 50px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   color: #4fd2c2;
 }
 #fh5co-pricing .fh5co-price > span {
   font-size: 16px;
   line-height: 16px;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #ccc;
 }
@@ -8296,7 +8335,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 #fh5co-features-2 .fh5co-icon i {
-  color: #f1c232;
+  color: #454545;
   font-size: 70px;
 }
 @media screen and (max-width: 992px) {
@@ -8444,7 +8483,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 17px;
   color: #484848;
   letter-spacing: 2px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   text-transform: uppercase;
   font-weight: 400;
@@ -8510,7 +8549,7 @@ h1, h2, h3, h4, h5, h6 {
 .fh5co-uppercase-sm {
   font-size: 20px;
   letter-spacing: 2px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   color: #484848;
@@ -8534,7 +8573,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .fh5co-section-heading .emp {
-  font-family: "Playfair Display", times, serif;
+  font-family: 'Roboto', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -8579,6 +8618,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 100px;
     margin: 0 auto 20px auto;
   }
+  #fh5co-features-2 .fh5co-text-wrap .fh5co-text p{
+    font-size: 15px;
+  }
 }
 #fh5co-testimony blockquote {
   padding: 0;
@@ -8593,7 +8635,7 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-testimony blockquote p {
   font-size: 30px;
   line-height: 45px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300; 
   line-height: 38px;
 }
@@ -8604,7 +8646,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 #fh5co-testimony .fh5co-author {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   /*font-family: "Montserrat", arial, sans-serif;*/
   color: #fff;
 }
@@ -8709,7 +8752,7 @@ pre {
 
 /* Buttons */
 .btn {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -8792,7 +8835,7 @@ pre {
   box-shadow: none !important;
   border: 2px solid #444;
   background: transparent;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
 }
 .form-control:hover, .form-control:focus, .form-control:active {
@@ -8845,7 +8888,7 @@ pre {
   color: #878c93;
   position: fixed;
   bottom: 0;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
 #fh5co-footer .fh5co-overlay {
@@ -8884,7 +8927,7 @@ pre {
 }
 #fh5co-footer .fh5co-lead {
   font-size: 13px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -8904,7 +8947,7 @@ pre {
   margin-bottom: 10px;
 }
 #fh5co-footer .fh5co-footer-logo a {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   font-size: 20px;
   letter-spacing: 2px;
@@ -9170,8 +9213,8 @@ pre {
   margin-top: 12px;
   color: #fff;
   margin-left: -70px;
-  font-weight: 600;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   letter-spacing: 2px;
   font-size: 15px;
@@ -9296,7 +9339,7 @@ pre {
   display: block;
   color: #fff;
   width: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   margin-bottom: .5em;
 }
@@ -9305,7 +9348,7 @@ pre {
   color: #fff;
   text-transform: uppercase;
   font-size: 13px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   /*font-family: "Montserrat", arial, sans-serif;*/
   letter-spacing: 5px;
   margin-bottom: 2em;
