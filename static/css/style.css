@@ -7488,7 +7488,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nosotros-p{
   font-weight: 200;
-  font-size: 25px;
+  font-size: 22px;
   line-height: 32px;
 }
 
@@ -7534,8 +7534,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .slide-p{
   font-weight: 300;
-  font-size: 35px;
-  line-height: 35px;
+  font-size: 25px;
+  line-height: 30px;
 }
 
 #fh5co-parallax{
@@ -7568,7 +7568,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 30px 0px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 25px;
   line-height: 35px;
 
 }
@@ -7713,6 +7713,7 @@ h1, h2, h3, h4, h5, h6 {
 .logo-chkd{
   width: 60px;
   height: 60px;
+  margin-bottom: 20px;
 }
 .chkd{
   text-decoration: none !important;
@@ -8228,7 +8229,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0px;
 }
 .servicios-c{
-  height: 200px;
+  height: 250px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-subscribe .form-group {
@@ -8553,9 +8554,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: 400;
   color: #484848;
+  margin-bottom: 10px;
 }
 #fh5co-features-2 .fh5co-text-wrap .fh5co-text p{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   margin-bottom: 10px;
 }
@@ -8633,7 +8635,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 #fh5co-testimony blockquote p {
-  font-size: 30px;
+  font-size: 25px;
   line-height: 45px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300; 
